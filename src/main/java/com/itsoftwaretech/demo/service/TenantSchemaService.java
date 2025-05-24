@@ -59,8 +59,6 @@ public class TenantSchemaService {
             response.put("status","SUCCESS");
             response.put("message","Tenant successfully saved");
         }catch (Exception e){
-            e.printStackTrace();
-            System.out.println("Error "+e.getMessage());
             throw new RuntimeException("Exception",e);
         }
 
@@ -72,7 +70,7 @@ public class TenantSchemaService {
         dataSource = createTenantDataSource(tenantId);
         try (Connection connection = dataSource.getConnection()) {
 
-            // Load and replace schema in SQL
+            // Create table in the newly created schema
             String sqlTemplate = new BufferedReader(
                     new InputStreamReader(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("db/changelog/v1/002.sql")))
             ).lines().collect(Collectors.joining("\n"));

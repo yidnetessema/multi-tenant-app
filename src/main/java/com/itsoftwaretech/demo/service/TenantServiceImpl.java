@@ -48,7 +48,6 @@ public class TenantServiceImpl {
 
 
         } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
             throw new RuntimeException("Exception", e);
         }
 
@@ -71,7 +70,6 @@ public class TenantServiceImpl {
                     .build();
 
             if (test1RepositoryProvider != null) {
-                System.out.println("TEst ");
                 test1RepositoryProvider.save(test1);
 
                 response.put("status", "SUCCESS");
