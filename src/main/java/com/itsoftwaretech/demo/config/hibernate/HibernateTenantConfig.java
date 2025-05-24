@@ -1,6 +1,5 @@
 package com.itsoftwaretech.demo.config.hibernate;
 
-
 import com.itsoftwaretech.demo.config.CurrentTenantIdentifierResolverImpl;
 import com.itsoftwaretech.demo.config.MultiTenantConnectionProviderImpl;
 import jakarta.persistence.EntityManagerFactory;

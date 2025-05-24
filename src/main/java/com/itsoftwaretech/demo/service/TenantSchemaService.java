@@ -69,12 +69,6 @@ public class TenantSchemaService {
     }
 
     private void runLiquibaseForTenant(String tenantId) throws Exception {
-//        SpringLiquibase liquibase = new SpringLiquibase();
-//        liquibase.setDataSource(createTenantDataSource(tenantId));
-//        liquibase.setChangeLog("classpath:db/changelog/v1/002.sql");
-//        liquibase.setDefaultSchema(tenantId);
-//        liquibase.setShouldRun(true);
-//        liquibase.afterPropertiesSet();
         dataSource = createTenantDataSource(tenantId);
         try (Connection connection = dataSource.getConnection()) {
 
