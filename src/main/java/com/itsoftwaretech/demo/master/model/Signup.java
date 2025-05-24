@@ -14,7 +14,7 @@ public class Signup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "tenant_id")
+    @Column(name = "tenant_id",unique = true, nullable = false)
     private String tenantId;
     
 }
