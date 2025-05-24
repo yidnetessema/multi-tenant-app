@@ -1,0 +1,5 @@
+
+CREATE TABLE IF NOT EXISTS signup (
+    id SERIAL PRIMARY KEY,
+    tenant_id VARCHAR(255) UNIQUE
+);

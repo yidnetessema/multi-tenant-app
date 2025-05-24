@@ -1,0 +1,53 @@
+system:
+  status: active
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/itsw_masterdb
+    username: postgres
+    password: admin@1234
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      hibernate:
+        ddl-auto: none
+      show-sql: true
+      generate-ddl: true
+      properties:
+        hibernate:
+          format-sql: true
+      database: postgresql
+      database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/master-changelog.xml
+
+# Swagger / Springdoc
+springdoc:
+  api-docs:
+    path: /api/docs
+  swagger-ui:
+    path: /swagger/ui.html
+    enabled: true
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,openapi,swagger-ui
+      base-path: /api/monitor
+  endpoint:
+    health:
+      show-details: always
+
+# Server Compression
+server:
+  port: 8081
+  compression:
+    enabled: true
+    mime-types: text/html, text/plain, text/css, application/javascript, application/json
+    min-response-size: 2KB
+
+
+
