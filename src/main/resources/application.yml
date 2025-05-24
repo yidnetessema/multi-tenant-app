@@ -1,0 +1,23 @@
+server:
+  port: 8081
+system:
+  status: active
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/itsw_masterdb
+    username: postgres
+    password: admin@1234
+    driver-class-name: org.postgresql.Driver
+    jpa:
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:/db/changelog/master-changelog.xml
+#

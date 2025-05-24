@@ -1,0 +1,15 @@
+CREATE SCHEMA IF NOT EXISTS __SCHEMA__;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS __SCHEMA__.test1 (
+    id SERIAL PRIMARY KEY,
+    test_name VARCHAR(255),
+    test_description VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS __SCHEMA__.test2 (
+    id SERIAL PRIMARY KEY,
+    test_name2 VARCHAR(255),
+    test_description2 VARCHAR(255)
+);
